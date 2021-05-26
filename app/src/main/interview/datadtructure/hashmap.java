@@ -75,3 +75,26 @@ h & (length - 1)
 
 位运算：基础水平，开发，源码
 难：科班，计算机原理
+
+classLoader:
+new HashMap():内存  -》 ClassLoader
+父类委托
+
+dex[] framwork中:
+dexdiff:  dex -->服务器, hook技术，反射和动态代理
+
+5、传统hashmap的缺点：（为什么引入红黑树?）   -->网易
+缺点：
+5.1：多线程，持锁，线程不安全
+        get()：链表死循环问题（java 1.7存在的问题）
+5.2：hashmap长度过长
+    hash算法不确定算法
+    &运算：多对一,导致链表会更长，没办法控制链表的长度
+5.3：解决效率？
+    java 1.8：Hash冲突不再使用链表来保存相同index的节点，相应的采用红黑树（高性能的平衡树）来保存冲突节点。
+    o(n)
+    2^n
+    o(logn)
+
+
+HashMap和HashTable区别:
