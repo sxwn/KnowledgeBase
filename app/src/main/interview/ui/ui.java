@@ -1,0 +1,4 @@
+View:
+onMeasure
+onLayout
+onDraw
