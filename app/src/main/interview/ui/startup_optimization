@@ -1,0 +1,21 @@
+启动状态:
+冷启动：需要优化。
+    2.5.8（s）原则;
+    onCreate休眠3s(3000)---->view显示慢
+       4.4:
+       1、Verbose:displayed来看log
+       2、adb命令来看
+        adb shell
+        am start -S -W 包名/.MainActivity
+热启动：退到后台。
+温启动：介入冷启动和热启动直接，需要重新执行onCreate,但是进程可能未被销毁。还有一种系统将应用从内存中释放，
+    然后用户又想重新启动它，进程和Activity需要重启，但是传递到onCreate的时候已经保存的实例savedInstanceState
+    对于完成此任务有一定助益。
+
+    黑白屏问题:
+    window背景,默认是白色居多
+    1、治标
+        log图标
+        // ff不透明，一般需要加个图， webp格式
+        <style> <item name="android:windowBackground">#ff00ff00<item></style>
+    2、治本
