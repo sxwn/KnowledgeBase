@@ -11,11 +11,25 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        resConfigs 'en','zh'
+//
+//        ndk{
+//            abiFilters 'arm64-v8a'
+//        }
     }
 
     buildTypes {
+//        debug {
+            // 设置false 混淆和压缩代码工具，代码优化
+            // R8树,方法无用就删除了
+//            minifyEnabled false
+            // 资源进行压缩,删除内容
+            // 规则：通配符删除，比如说activity_main1===>activity_main1* 都不会删除，其它无用的会删除
+            // 非严苛模式
+//            shrinkRources true
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'

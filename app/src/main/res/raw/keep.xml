@@ -1,0 +1,4 @@
+<resources
+    tools:discard="@layout/activity_main11,@layout/activity_main12"
+    xmlns:tools="http://schemas.android.com/tools"
+    />
