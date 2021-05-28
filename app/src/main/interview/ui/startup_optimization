@@ -51,3 +51,40 @@
            Edit一些属性:profile:Trace Java Methods:
            profile运行app
            Top Down :查看用的比较多
+            >=26 8.0
+
+            8.0之前
+            Debug.startMethodTracing("TestApp")
+            Debug.stopMethodTracing()
+     异步加载布局：
+        场景:setContentView:耗时1s
+        依赖一个库
+        // 子线程异步去执行xml的加载
+        new AsyncLayoutInflater(this).inflate...
+
+    第三方开源框架：
+    效率:
+    StrictMode：严苛模式
+
+    MyApplication设置严苛模式
+         if (BuildConfig.DEBUG) {
+                    // 线程检测策略
+                    StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                            .detectDiskReads()
+                            .detectDiskWrites()
+                            .detectNetwork()
+                            .penaltyDeath() //违规则崩溃
+                            .penaltyLog() //违规则打日志
+                            .build()
+                    );
+                    // 虚拟机检测策略
+                    StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+                            .detectLeakedSqlLiteObjects() // SqlLite对象泄漏
+                            .detectLeakedClosableObjects() // 未关闭的 Closable对象泄漏
+                            .penaltyDeath() //违规则崩溃
+                            .penaltyLog() //违规则打日志
+                            .build()
+                    );
+                }
+
+    3-5年 知识体系
