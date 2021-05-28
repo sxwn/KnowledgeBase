@@ -36,4 +36,18 @@
                 -->Decview:dispatchWindowFocusChanged  --> onWindowFocusChanged  ->Window.Callback
                  -->activity:onWindowFocusChanged
 
-        源码：  一线企业，百度谷歌找不到，只能通过看源码解决问题
+        耗时操作：
+        网络请求：子线程，可忽略
+        数据库
+        IO
+        图片加载
+
+        ViewPager 懒加载
+
+     源码：  一线企业，百度谷歌找不到，只能通过看源码解决问题
+
+        如何查看方法耗时？
+           工具的使用
+           Edit一些属性:profile:Trace Java Methods:
+           profile运行app
+           Top Down :查看用的比较多
