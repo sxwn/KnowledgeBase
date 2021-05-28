@@ -19,3 +19,21 @@
         // ff不透明，一般需要加个图， webp格式
         <style> <item name="android:windowBackground">#ff00ff00<item></style>
     2、治本
+        界面显示前，少做点事情
+        application：构造方法执行开始---> MainActivity:onResume
+        xml加载流程:
+        2.1ActivityThread:performResumeActivity[]---> onResume
+        2.2wm.addView(dector,l) --->setContentView流程---->Activity xml Decview ->android.R.id.content
+        2.3 Activity attach:创建windowmanager
+            windowManagerImpl.addView--->windowManagerGlobal.addView-->ViewRootImpl.setView,调用requestLayout()
+            ，然后执行mWindowSession.addToDisplayAsUser(session类)
+            mWindowSession跟下,其实就是windowManagerGlobal.getWindowSession()--->wms管理流程(handler处理)
+        getWindowSession：
+            AIDL：Binder通信(进程间通信)
+                WindowManagerService
+
+            ViewRootImpl: handleWindowFocusChanged
+                -->Decview:dispatchWindowFocusChanged  --> onWindowFocusChanged  ->Window.Callback
+                 -->activity:onWindowFocusChanged
+
+        源码：  一线企业，百度谷歌找不到，只能通过看源码解决问题

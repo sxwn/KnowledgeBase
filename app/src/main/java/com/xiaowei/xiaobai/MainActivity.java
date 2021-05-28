@@ -44,4 +44,10 @@ public class MainActivity extends AppCompatActivity {
             mValueAnimator.cancel();
         }
     }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        // 延迟加载放这里
+    }
 }
