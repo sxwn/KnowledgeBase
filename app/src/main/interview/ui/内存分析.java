@@ -70,7 +70,7 @@ Pthread_thread_max = 1024
 
 OOM 怎么解决？
     解决方案？
-    1、LeakCanary的使用（square公司出台的）  百度自行依赖，就一句话
+    1、LeakCanary的使用（square公司出台的）  百度自行依赖，就一句话,debug模式下检测泄漏的
     2、场景的内存分析工具：
         2.1 Memory Analyzer Tools
         2.2 Menory Profiler
@@ -84,4 +84,23 @@ java：内存不用管理，为啥还会导致OOM?  GC？
     堆 和 栈
     A a = new A();  // a保存在栈里面的，a其实就是个引用， new A()这个对象放在堆里面的。
 
-    a:gcroot
+    a:gcroot    虚拟机栈 VM Stack
+
+    一般能作为gcroot 的是方法区（存放静态变量、常量）、虚拟机栈、本地方法栈（jni）
+
+    堆里面的内存被上面三个gcroot引用着，GC就不会回收堆里面的内存。
+
+    内存分析：
+    Shallowsize
+    浅堆 ：本身占用的内存大小
+    RetainedSize 深堆：内存之和
+
+    (RetainedSize - Shallowsize)：就是需要回收的内存大小。
+
+    ContentProvider.onCreate();
+    Apllication.onCreate();
+    打包:merge 资源打包
+
+    手写leakcanary:
+
+
