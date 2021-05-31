@@ -67,3 +67,21 @@ Pthread_thread_max = 1024
     1、较少对象的内存占用
     2、内存对象的复用
     3、避免对象的内存泄漏
+
+OOM 怎么解决？
+    解决方案？
+    1、LeakCanary的使用（square公司出台的）  百度自行依赖，就一句话
+    2、场景的内存分析工具：
+        2.1 Memory Analyzer Tools
+        2.2 Menory Profiler
+        2.3 LeakCanary  sdcard/download/文件,直接双击打开
+
+java：内存不用管理，为啥还会导致OOM?  GC？
+    gcroot 可达性分析
+    可回收对象的判定
+    gcroot被直接或紧接引用，不会被 GC 回收。
+
+    堆 和 栈
+    A a = new A();  // a保存在栈里面的，a其实就是个引用， new A()这个对象放在堆里面的。
+
+    a:gcroot
