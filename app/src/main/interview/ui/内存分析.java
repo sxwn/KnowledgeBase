@@ -102,5 +102,18 @@ java：内存不用管理，为啥还会导致OOM?  GC？
     打包:merge 资源打包
 
     手写leakcanary:
+    Activity Fragment ， 由于这两个含有生命周期的属性
+    onDestroy GC来了回收，如果回收不了就说明内存泄漏了
+    refwatcher.watch(activity):触发gc回收。
+
+    比如：门卫登记
+        观察列表：A、B、C、D。。。
+        问题：A、B、C、D  --->怀疑列表：A、B、C、D
+        报警
+
+    怎么知道变量或者是对象是否被GC回收了？  ---》弱引用： 引用队列
+
+    弱引用：GC一旦扫到就回收。
+    软引用：GC一旦扫到不一定回收，仅仅是内存不足的时候才会回收。
 
 
