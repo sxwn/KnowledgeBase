@@ -118,6 +118,27 @@ java：内存不用管理，为啥还会导致OOM?  GC？
 
     泄漏了引用队列为空，反之亦然。
     引用队列不为空，移除观察列表。
+            
+    持久活好
 
+    LMK：保活
 
+    流畅不卡
+    内存抖动：内存频繁地分配和回收。它伴随着频繁的GC。
+    卡顿：
+    profile工具 ：  cpu memory network检测
+
+    default heap -- Arrange by class -- 排序
+    FinalizerReference 大量的对象
+    Object
+        hashcode()
+        finlizer()
+    demo:
+        onDraw里不能new
+        path每次设置之前reset
+        path.reset();
+        path.setColor();
+        path.moveTo();
+        path.lineTo();
+        cavas.drawPath(path)
 
