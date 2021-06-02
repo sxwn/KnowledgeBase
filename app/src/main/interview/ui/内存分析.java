@@ -142,3 +142,19 @@ java：内存不用管理，为啥还会导致OOM?  GC？
         path.lineTo();
         cavas.drawPath(path)
 
+    Color.parseColor()里面:
+    subString:会创建新的String对象
+    预防数组下标越界  colors[currentColor++ % 8]
+
+    profile依赖于DDMServer:伴随一些对象的创建
+
+    内存抖动：
+    卡顿：STW
+    程序崩溃oom：和具体的垃圾回收算法有关系
+            标记清除算法
+            CMS垃圾回收器老年代标记 --清除算法：内存碎片
+
+    垃圾收集器：CMS
+    G1
+
+    垃圾收集机制的实现
