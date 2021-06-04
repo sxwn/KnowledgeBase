@@ -180,3 +180,8 @@ java：内存不用管理，为啥还会导致OOM?  GC？
     downmap java:内存快照
 
     mat工具帮助我们排除强、软、弱、虚引用。
+
+    查看java源码中的字节码文件。
+
+    onAttachedToWindow
+    onDetachedFromWindow成对出现。
