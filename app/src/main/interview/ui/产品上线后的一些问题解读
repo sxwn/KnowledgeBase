@@ -13,3 +13,31 @@ java中出现OOM(内存溢出)的原因：
     2、内存碎片，没有足够可用的连续的内存
     3、文件描述符太多  too many open file(对于java程序来说，此情况还是很多的)
     4、线程创建的太多了
+
+垃圾回收机制 gc
+可达性
+分代回收：
+    老一代：标记-清除
+
+    频繁的创建与回收对象，频繁的gc
+        大量的内存碎片
+        内存抖动
+
+怎么办？
+APM：Application Performance Monitor
+
+蓝海
+
+微信 matrix  友盟U+apm  腾信云:qapm  抖音:Kenzo
+
+分析:内存抖动问题
+    频繁调用的方法中  循环中 new
+动态内存分配监听:
+ObjectAlloc
+ObjectFree
+
+    内存泄漏:
+
+怎么实现?
+    JVM Tool Interface:java 虚拟机工具接口
+    source.android.google.cn  / 配置、运行时、ART TI  8.0以上支持
