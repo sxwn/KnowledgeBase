@@ -71,3 +71,15 @@ leakcanary源码:
     IO原理? 耗时操作？
     MMAP
         memory mapping
+
+    AIDL:配置文件
+    sdk/AIDL.exe :解析aidl文件---》java文件
+
+    美团logan
+    微信xlog
+    爱奇艺 xcrash
+
+    mmkv
+
+    腾讯内部方案：线上文件
+    debug : debugger:true
