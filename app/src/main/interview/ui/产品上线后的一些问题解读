@@ -41,3 +41,33 @@ ObjectFree
 怎么实现?
     JVM Tool Interface:java 虚拟机工具接口
     source.android.google.cn  / 配置、运行时、ART TI  8.0以上支持
+
+leakcanary源码:
+    dump内存快照：获取当前应用的内存使用情况。
+
+如何使用?
+    jvmti.h 在Android代码库中获取。 ----》配置-》运行时-》左侧有ART TI---》最下面有Android代码库,需要翻墙
+
+    c/c++
+    jvmti.h
+
+    jvmti：
+    1、完成jvmti接口的调用，实现功能
+    2、把jvmti程序挂载到jvm虚拟机中
+
+    动态库:.so文件
+    获取apk/lib/x.so的地址
+    先获取apk包的地址--》PMS ---》zip .apk(.zip)--》.so --->sdcard
+
+    static {
+        System.loadLibrary("");
+    }
+
+    classLoader#findlibrary方法
+
+    信息---》组装----》持久化写到文件中。
+    IO 高频 IO操作
+    高性能日志系统怎么设计?----实现
+    IO原理? 耗时操作？
+    MMAP
+        memory mapping
