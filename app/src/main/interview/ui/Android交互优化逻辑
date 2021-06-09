@@ -45,3 +45,26 @@ ViewPager + Fragment + 懒加载
 
 懒加载：过程、原理。
 核心：setUserVisibleHint?为什么是核心？懒加载合理的吗？
+需要结合fragment生命周期来搞。
+
+setUserVisibleHint()逻辑：
+viewPager:预加载的原理--->源码
+
+适配方案:adapter. View
+UI:
+序列化:fastJason、gson，尽量使用gson
+json:反射，适配器
+gson解析原理：
+反射：创建一个Bean，解析String，基于""的变量，反射:Bean类里面的set get，赋值。
+技术：gson速度，确保数据不会丢失。
+
+适配：T --》 bean ---》 T class 反射。
+
+ViewPager：
+// 填充
+populate()
+setOffscreenPageLimit(int limit);//默认是缓存1个页面
+
+ViewPgaer2 基于RecycleView，和ViewPage机制完全不一样。
+
+缓存:
