@@ -68,3 +68,39 @@ setOffscreenPageLimit(int limit);//默认是缓存1个页面
 ViewPgaer2 基于RecycleView，和ViewPage机制完全不一样。
 
 缓存:
+ArrayList<ItemInfo>
+static class ItemInfo {
+    Object object; fragment
+}
+
+ViewPager:缓存、预加载,问题
+fragment:
+list?  两个list持有了一个Fragment,当前的一帧.  static list 导致的。
+
+看见一部分，划不动。
+
+调优：
+懒加载:
+
+
+setUserVisibleHint(); 逻辑
+fragment生命周期管理机制
+// 初始化item (适配器)
+setUserVisibleHint(false) //不可见
+                            // 可见
+                            PagerAdapter里初始化和设置当前fragment主动调用。
+attach，不走
+
+finishUpdate():
+commitAllowingStateLoss  会触发fragment生命周期
+触发器:commit
+栈：
+
+懒加载：可见的时候才加载数据,不可见停止加载数据
+淘宝: P7: 首页开发? 原理：
+
+启动ViewPager，此时默认tab没有进行懒加载，需要补充分发。
+
+4--->跳到第3页面： 2停止
+懒加载不严谨
+3---》1  1停止3停止1刷新1刷新
