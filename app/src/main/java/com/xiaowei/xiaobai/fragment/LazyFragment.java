@@ -84,6 +84,17 @@ public abstract class LazyFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        if (!mCurrentVisiableState && getUserVisibleHint()) {
+            dispatchUserVisiableHint(false);
+        }
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        // fragment跳转到一个新的activity的回调
+        if (mCurrentVisiableState && getUserVisibleHint()) {
+            dispatchUserVisiableHint(false);
+        }
+    }
 }

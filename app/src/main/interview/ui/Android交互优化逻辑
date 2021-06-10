@@ -104,3 +104,5 @@ commitAllowingStateLoss  会触发fragment生命周期
 4--->跳到第3页面： 2停止
 懒加载不严谨
 3---》1  1停止3停止1刷新1刷新
+
+内存抖动：
