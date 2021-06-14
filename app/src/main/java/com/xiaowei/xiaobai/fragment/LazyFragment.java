@@ -15,6 +15,10 @@ import androidx.fragment.app.Fragment;
  */
 public abstract class LazyFragment extends Fragment {
     /**
+     * FragmentDelegater
+     */
+
+    /**
      * 根布局
      */
     private View mRootView;
@@ -38,6 +42,7 @@ public abstract class LazyFragment extends Fragment {
         initView(mRootView);
         mIsViewCreated = true;
         if (getUserVisibleHint()) {
+            // 补充分发
             dispatchUserVisiableHint(true);
         }
         return mRootView;
@@ -53,8 +58,10 @@ public abstract class LazyFragment extends Fragment {
         super.setUserVisibleHint(isVisibleToUser);
         if (mIsViewCreated) {
             if (!mCurrentVisiableState && isVisibleToUser) {
+                // 之前不可见，现在可见
                 dispatchUserVisiableHint(true);
             } else if (mCurrentVisiableState && !isVisibleToUser) {
+                // 之间可见，现在不可见
                 dispatchUserVisiableHint(false);
             }
         }
@@ -63,6 +70,7 @@ public abstract class LazyFragment extends Fragment {
     // 用于统一控制页面数据加载
     private void dispatchUserVisiableHint(boolean visiableState) {
         if (mCurrentVisiableState == visiableState) {
+            // 防止多加载一次，3--->1
             return;
         }
         mCurrentVisiableState = visiableState;
