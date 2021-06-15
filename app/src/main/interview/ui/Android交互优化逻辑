@@ -113,3 +113,23 @@ commitAllowingStateLoss  会触发fragment生命周期
 不可见--->可见：瞬间
 
 逻辑、原理一定得搞清。
+
+写出:
+onPause:
+偶现：必现
+
+内存：2个星期
+内存共享池
+
+10min后更新。
+//base里面写个Timer
+
+hidden();
+show();
+完整的策略
+
+懒加载优化背后的逻辑
+arrayList的优化
+
+
+数据结构的优化

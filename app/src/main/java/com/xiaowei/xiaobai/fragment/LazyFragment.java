@@ -93,7 +93,7 @@ public abstract class LazyFragment extends Fragment {
     public void onResume() {
         super.onResume();
         if (!mCurrentVisiableState && getUserVisibleHint()) {
-            dispatchUserVisiableHint(false);
+            dispatchUserVisiableHint(true);
         }
     }
 
@@ -104,5 +104,12 @@ public abstract class LazyFragment extends Fragment {
         if (mCurrentVisiableState && getUserVisibleHint()) {
             dispatchUserVisiableHint(false);
         }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mIsViewCreated = false;
+        mCurrentVisiableState = false;
     }
 }
