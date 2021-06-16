@@ -25,4 +25,22 @@ EventBus 3.0之后性能有提升。
 1、识别东西
 2、传参
 
+查询  速度  多张表   数据结构
+
+看薪资选行业
+
+Handler:线程间的通信
+进程间的通信:Binder ---> AIDL
+
+EventBus优化处理：
+APT：注解处理器
+
+EventBus开发人员不知道能不能优化
+
+js
+
+Flutter
+
+
+
 
