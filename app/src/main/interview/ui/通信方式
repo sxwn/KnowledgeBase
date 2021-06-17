@@ -33,7 +33,7 @@ Handler:线程间的通信
 进程间的通信:Binder ---> AIDL
 
 EventBus优化处理：
-APT：注解处理器
+APT：注解处理器 --- 根据注解处理器去处理代码 ---必须有具体规则
 
 EventBus开发人员不知道能不能优化
 
