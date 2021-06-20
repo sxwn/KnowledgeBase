@@ -53,6 +53,12 @@ APT：java工具
 
     好处:通过注解拿到类的信息
 
+    java-poet: api
+
+    auto-service:生成meta-inf文件
+
+    make-project:编译生成类信息，有规则的业务代码info。
+
 
 
 
