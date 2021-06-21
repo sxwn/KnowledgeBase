@@ -1,0 +1,40 @@
+Google中的事件架构:
+
+设计事件需要考虑什么？
+1、每个界面元素都有事件。意味着事件核心处理类不能太多。
+2、事件的传递不能丢给开发者实现，只能暴露接口回调。
+3、每个控件都可能接受事件和消费事件。如果发生控件消费事件，后续事件也必须由他消费。
+4、如何快速查找控件会消费事件？
+5、如何通过点击坐标查找该范围的控件？
+6、每次发生事件是都需要遍历每一个子元素吗？
+
+控件和事件的关系：
+没有事件的控件是没有灵魂的。
+每一个控件是事件传递的一员。切都具备处理事件传递规则的能力。意味着传递事件的代码会抽象在一个类中(View)。
+
+View:26000 行代码
+事件 60%
+绘制 10%
+测量 15%
+其它 25%
+
+处理事件:
+onTouchEvent(MotionEvent ev) 优先级 > onClickListener 优先级
+    return true; 自己消费 return false; 不消费
+
+disPatchTouchEvent(MotionEvent ev)
+    return true; 自己消费 return false; 不消费
+
+onInterceptTouchEvent(MotionEvent ev)
+
+Activity--->PhoneWindow--->DectorView--->ViewGroup
+
+自定义ViewGroup
+
+    // 分发
+    dispatchTransformedTouchEvent();
+
+View:
+    1、dispatchTouchEvent();
+    2、onTouchEvent();
+    3、设置了一个点击事件代表消费了
