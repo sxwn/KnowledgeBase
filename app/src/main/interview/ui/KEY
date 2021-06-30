@@ -1,0 +1,51 @@
+重命名 SHIFT + f6
+    ctrl + shift + f
+CTRL + P 参数提示
+
+错误  按F2
+
+quick setting:
+ ctrl + shift + f
+
+.null
+.notnull: 不等于空
+
+ctrl + shift + 回车： 填充括号
+ 比如： hhh == null && nnnn !=null.if 回车
+
+ for变量
+
+ strings.for 回车
+
+ 全部格式化
+ ctrl + alt + l
+
+    ctrl + shift + 回车 : 格式化当前
+
+
+    折叠代码:
+    ctrl + alt + 加号/减号
+
+    移动代码
+    ctrl + shift + 上移、下移键盘
+
+    复制一行代码
+    ctrl + d
+
+    删除一行代码
+    ctrl + x
+
+    向下添加
+    shift + 回车
+
+    向上添加
+    ctrl + alt + 回车
+
+    alt+ 鼠标下旋/往下拖
+    ctrl + shift + u
+    多行代码同时编辑
+
+    ctrl + shift + u
+    大小写切换
+
+
