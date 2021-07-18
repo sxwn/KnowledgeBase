@@ -14,6 +14,15 @@ import com.xiaowei.xiaobai.R;
  * bundle
  * 接口回调（java中）
  * 观察者模式 eventbus、liveData 发布订阅模式
+ * 生命周期：
+ * 打开主界面：
+ * onCreate ---> onCreateView -->onActivityCreate -->onStart --->onResume
+ * 按下主屏键
+ * onPause --->onStop
+ * 重新打开界面
+ * onStart --->onResume
+ * 按后退键
+ * onPause --->onStop --->onDestroyView---->onDestroy--->onDetach
  */
 public class MainFragment extends LazyFragment {
 
