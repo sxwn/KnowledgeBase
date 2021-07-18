@@ -1,14 +1,11 @@
 package com.xiaowei.xiaobai;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
-import android.view.ViewGroup;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
-import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.xiaowei.xiaobai.view.QQStepView;
 
