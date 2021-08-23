@@ -18,6 +18,9 @@ import java.util.List;
 
 /**
  * ViewPager2 懒加载
+ * fragmentPagerAdapter
+ * fragmentStatePagerAdapter  --- 销毁  viewpage1上有区别
+ * FragmentStateAdapter
  */
 public class ItemFragment extends LazyFragment {
     private List<PageInfo> list = new ArrayList<>();

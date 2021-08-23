@@ -1,5 +1,9 @@
 package com.xiaowei.xiaobai;
 
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
+import android.content.ComponentName;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,6 +32,7 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
         Button replaceBtn = findViewById(R.id.btn_replace);
         changeBtn.setOnClickListener(this);
         replaceBtn.setOnClickListener(this);
+
     }
 
     @Override
@@ -74,5 +79,31 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void changeFragment(Fragment mainFragment) {
+    }
+
+    // https://developer.android.google.cn/reference/android/app/job/JobScheduler.html  Android 5.0	21	LOLLIPOP
+    public void scheduleJob(View view) {
+        ComponentName componentName = new ComponentName(this, ExampleJobService.class);
+        JobInfo jobInfo = new JobInfo.Builder(123,componentName)
+            .setRequiresCharging(true)// 充电
+            .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)//表示设备不是蜂窝网络
+            .setPersisted(true)//  这个方法告诉系统当设备重启之后任务是否还要继续执行
+            .setPeriodic(15 * 60 * 1000) //任务运行的周期
+            .build();
+        JobScheduler scheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
+        int resultCode = scheduler.schedule(jobInfo);
+        if (resultCode == JobScheduler.RESULT_SUCCESS) {
+            // 如果此作业已成功安排，则返回
+            Log.d(TAG, "scheduleJob: Job scheduled");
+        } else {
+            // 如果作业未成功安排，则返回
+            Log.d(TAG, "scheduleJob: Job scheduling failed");
+        }
+    }
+
+    public void cancelJob(View view) {
+        JobScheduler scheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
+        scheduler.cancel(123);
+        Log.d(TAG, "scheduleJob: Job canceled");
     }
 }
