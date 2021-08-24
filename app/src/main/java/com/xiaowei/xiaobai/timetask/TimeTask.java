@@ -28,6 +28,6 @@ public class TimeTask {
 
         // 1个小时从服务器拉取最新的数据
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,100,60 * 60 * 1000,pendingIntent);
-        alarmManager.setAndAllowWhileIdle((AlarmManager.RTC_WAKEUP,10000,pendingIntent);
+        alarmManager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP,10000,pendingIntent);
     }
 }
