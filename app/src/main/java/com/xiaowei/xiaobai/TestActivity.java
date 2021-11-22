@@ -15,7 +15,6 @@ import com.xiaowei.xiaobai.dao.User;
 
 @Route(path = Constance.ACTIVITY_URL_TEST)
 public class TestActivity extends Activity {
-
     @Autowired(name = "name")
     String mName;
 
@@ -35,5 +34,8 @@ public class TestActivity extends Activity {
         setContentView(linearLayout);
         ARouter.getInstance().inject(this);
         Log.e("weip", "name:" + mName + "age:" +mAge + "user:" + mUser.getName() + mUser.getAge());
+        linearLayout.setOnClickListener(v -> {
+            finish();
+        });
     }
 }
