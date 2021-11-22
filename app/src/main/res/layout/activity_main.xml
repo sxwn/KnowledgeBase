@@ -27,4 +27,12 @@
         android:layout_centerHorizontal="true"
         xiaobai:stepTextColor="#982222"
         xiaobai:stepTextSize="26sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:onClick="go"
+        android:text="arouter"
+        />
 </RelativeLayout>
