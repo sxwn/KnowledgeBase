@@ -50,6 +50,7 @@ class TouchCircleSurfaceView @JvmOverloads constructor(
                 if (holder.surface.isValid) {
                     val canvas = holder.lockCanvas()
                     canvas.drawColor(Color.BLACK)
+
                     // 绘图
                     bubblesList.toList().filter { it.radius < 3000 }.forEach {
                         mPaint.color = it.color
